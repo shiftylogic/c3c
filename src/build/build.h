@@ -18,7 +18,6 @@
 #define DEFAULT_SWITCH_JUMP_MAX_SIZE (0x3FFF)
 #define DEFAULT_PATH "."
 
-
 typedef enum
 {
 	COMMAND_MISSING = 0,
@@ -259,6 +258,7 @@ typedef struct BuildOptions_
 	bool lsp_mode;
 	bool no_entry;
 	bool no_obj;
+	bool keep_object_files;
 	bool no_headers;
 	bool read_stdin;
 	bool print_output;
@@ -272,6 +272,7 @@ typedef struct BuildOptions_
 	const char *msvc_version_override;
 	const char *msvc_sdk_version_override;
 	const char *fetch_sdk_target;
+	const char **fetch_sdk_archs;
 	int verbosity_level;
 	const char *panicfn;
 	const char *benchfn;
@@ -416,6 +417,7 @@ typedef struct
 	bool emit_llvm;
 	bool emit_asm;
 	bool emit_object_files;
+	bool keep_object_files;
 	bool benchmarking;
 	bool testing;
 	bool silent;
